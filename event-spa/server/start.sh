@@ -6,7 +6,7 @@
 export MIX_ENV=prod
 export PORT=4797
 
-CFGD=$(readlink -f /home/hw07/.config/events)
+CFGD=$(readlink -f /home/hw07/.config/eventspa)
 
 if [ ! -e "$CFGD/base" ]; then
     echo "Need to deploy first"
@@ -14,7 +14,7 @@ if [ ! -e "$CFGD/base" ]; then
 fi
 
 DB_PASS=$(cat "$CFGD/db_pass")
-export DATABASE_URL=ecto://hw07:$DB_PASS@localhost/hw07_prod
+export DATABASE_URL=ecto://hw09:$DB_PASS@localhost/hw09_prod
 
 SECRET_KEY_BASE=$(cat "$CFGD/base")
 export SECRET_KEY_BASE

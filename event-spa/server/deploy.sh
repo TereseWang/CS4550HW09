@@ -3,12 +3,12 @@
 export MIX_ENV=prod
 export PORT=4797
 export SECRET_KEY_BASE=insecure
-export DATABASE_URL=ecto://hw07:bad@localhost/hw07_prod
+export DATABASE_URL=ecto://hw09:bad@localhost/hw09_prod
 
 mix deps.get --only prod
 
 mix compile
-CFGD=$(readlink -f /home/hw07/.config/events)
+CFGD=$(readlink -f /home/hw07/.config/eventspa)
 
 if [ ! -d "$CFGD" ]; then
 	mkdir -p "$CFGD"
@@ -26,7 +26,7 @@ SECRET_KEY_BASE=$(cat "$CFGD/base")
 export SECRET_KEY_BASE
 
 DB_PASS=$(cat "$CFGD/db_pass")
-export DATABASE_URL=ecto://hw07:$DB_PASS@localhost/hw07_prod
+export DATABASE_URL=ecto://hw09:$DB_PASS@localhost/hw09_prod
 
 mix ecto.create
 mix ecto.migrate
