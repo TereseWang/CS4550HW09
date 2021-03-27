@@ -18,10 +18,10 @@ events-spa.teresewang.com
 
 4. Is your app functionality complete? If not, what's missing?
 
-not really, i just has user created, showed and have login log out session, have events create functionality in half way, really don't have time to complete this assignment when my other 3 CS course also has a bunch of homeworks. 
+not really, i just has user created, showed and have login log out session, have events create functionality in half way, really don't have time to complete this assignment when my other 3 CS course also has a bunch of homeworks.
 
 5. Is your app properly deployed? If not, what went wrong?
-yes, deployed sucessful 
+deployed failed, the frontend is sucessful at first, but when i tries to connect them, both crashed
 
 And here's a list of tasks for grading comments. Just leave this here:
  - Development
