@@ -3,8 +3,8 @@ Description=hw09
 
 [Service]
 Type=simple
-User=hw09
-Group=hw09
+User=root
+Group=root
 Restart=on-failure
 Environment=MIX_ENV=prod
 Environment=PORT=4797
