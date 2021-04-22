@@ -3,7 +3,7 @@ import store from './store';
 //referenced from lecture code SPA Structure from Nat Tuck CS4550 Northeastern University
 async function api_get(path) {
   let text = await fetch(
-    "http://localhost:4000/api/v1" + path, {});
+    "http://events-spa.teresewang.com/api/v1" + path, {});
   let resp = await text.json();
   return resp.data;
 }
@@ -17,7 +17,7 @@ async function api_post(path, data) {
     body: JSON.stringify(data),
   };
   let text = await fetch(
-    "http://localhost:4000/api/v1" + path, opts);
+    "http://events-spa.teresewang.com/api/v1" + path, opts);
   return await text.json();
 }
 
@@ -40,7 +40,7 @@ export async function create_user(user) {
   data.append("user[name]", user.name);
   data.append("user[email]", user.email);
   data.append("user[password]", user.password);
-  let resp = await fetch("http://localhost:4000/api/v1/users", {
+  let resp = await fetch("http://events-spa.teresewang.com/api/v1/users", {
     method: "POST",
     body: data,
   })
@@ -53,7 +53,7 @@ export async function update_user(user) {
   data.append("user[name]", user.name);
   data.append("user[email]", user.email);
   data.append("user[password]", user.password);
-  let resp = await fetch("http://localhost:4000/api/v1/users/" + user.id, {
+  let resp = await fetch("http://events-spa.teresewang.com/api/v1/users/" + user.id, {
     method: "PATCH",
     body: data,
   })
@@ -81,7 +81,7 @@ export async function create_event(event) {
   data.append("event[date]", JSON.stringify(event.date));
   data.append("event[description]", event.description);
   data.append("event[name]", event.name);
-  let resp = await fetch("http://localhost:4000/api/v1/events", {
+  let resp = await fetch("http://events-spa.teresewang.com/api/v1/events", {
     method: "POST",
     body: data,
   })
@@ -95,7 +95,7 @@ export async function update_event(event) {
   data.append("event[date]", JSON.stringify(event.date));
   data.append("event[description]", event.description);
   data.append("event[name]", event.name);
-  let resp = await fetch("http://localhost:4000/api/v1/events/" + event.id, {
+  let resp = await fetch("http://events-spa.teresewang.com/api/v1/events/" + event.id, {
     method: "PATCH",
     body: data,
   })
@@ -105,7 +105,7 @@ return await resp.json();
 export async function delete_event(id) {
   let data = new FormData();
   data.append("id", id);
-  fetch("http://localhost:4000/api/v1/events/" + id, {
+  fetch("http://events-spa.teresewang.com/api/v1/events/" + id, {
     method: 'DELETE',
     body: data,
   }).then((resp) => {
@@ -141,7 +141,7 @@ export async function create_comment(comment, user_id, event_id) {
   data.append("comment[body]", comment);
   data.append("comment[event_id]", event_id);
   data.append("comment[user_id]", user_id);
-  let resp = await fetch("http://localhost:4000/api/v1/comments", {
+  let resp = await fetch("http://events-spa.teresewang.com/api/v1/comments", {
     method: "POST",
     body: data,
   })
@@ -151,7 +151,7 @@ export async function create_comment(comment, user_id, event_id) {
 export async function delete_comment(id, event_id) {
   let data = new FormData();
   data.append("id", id);
-  fetch("http://localhost:4000/api/v1/comments/" + id, {
+  fetch("http://events-spa.teresewang.com/api/v1/comments/" + id, {
     method: 'DELETE',
     body: data,
   }).then((resp) => {
@@ -186,7 +186,7 @@ export async function create_invite(email, event_id) {
   let data = new FormData();
   data.append("invite[email]", email);
   data.append("invite[event_id]", event_id);
-  let resp = await fetch("http://localhost:4000/api/v1/invites", {
+  let resp = await fetch("http://events-spa.teresewang.com/api/v1/invites", {
     method: "POST",
     body: data,
   })
@@ -198,7 +198,7 @@ export async function update_invite(response, user_id, event_id, invite_id) {
   data.append("invite[response]", response);
   data.append("invite[user_id]", user_id);
   data.append("invite[event_id]", event_id);
-  let resp = await fetch("http://localhost:4000/api/v1/invites/" + invite_id, {
+  let resp = await fetch("http://events-spa.teresewang.com/api/v1/invites/" + invite_id, {
     method: "PATCH",
     body: data,
   })
