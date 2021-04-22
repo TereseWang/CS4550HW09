@@ -2,9 +2,9 @@ use Mix.Config
 
 # Configure your database
 config :eventspa, Eventspa.Repo,
-  username: "eventspa",
-  password: "gohWet4meino",
-  database: "eventspa_prod",
+  username: "hw09",
+  password: "XepooBu6quai",
+  database: "hw09_prod",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
