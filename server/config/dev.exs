@@ -24,7 +24,7 @@ config :eventspa, EventspaWeb.Endpoint,
 
 
 config :cors_plug,
-  origin: ["http://localhost:3000"],
+  origin: ["http://localhost:3000", "http://events-spa.teresewang.com"],
   max_age: 86400,
   methods: ["GET", "POST", "PATCH", "DELETE"]
 
